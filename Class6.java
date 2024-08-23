@@ -1,50 +1,30 @@
-package pack3.com.karthik.myclass;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+package pack.com.example1.myclass;
+
+import java.util.Enumeration;
+import java.util.Vector;
+
 public class Class6 {
-	static ArrayList<Integer>list = new ArrayList<>();
 	public static void main(String[] args) {
-		
-		
-		list.add(10);
-		list.add(20);
-		list.add(30);
-		list.add(40);
-		list.add(50);
-		contains();
-		Listremove();
-		ListClone();
-		//Iterator<object> iterator = list.iterator();
-		//while(iterator.hasNext())
-		//{
-			//System.out.println(iterator.next());
-		//}
-	}
-		public static void contains()
+		Vector<String> vector = new Vector<String>();
+		vector.add("1st");
+		vector.add("2nd");
+		vector.add("3rd");
+		vector.add("4th");
+		vector.add("5th");
+		System.out.println(vector);
+		vector.add(2, "karthik");
+		vector.addFirst( "lokesh");
+		vector.addLast("surya");
+		System.out.println(vector);
+		System.out.println("First element of  :"+vector.firstElement());
+		System.out.println("second elements of : "+vector.lastElement());
+		System.out.println( "using get to display the index : "+vector.get(0));
+		System.out.println(vector);
+		Enumeration<String> enumeration = vector.elements();
+		while(enumeration.hasMoreElements())
 		{
-			if(list.contains(10))
-			{
-				System.out.println("is avaliable");
-			}
-			else
-			{
-				System.out.println("not avaliable");
-			}
-		}
-		public static void Listremove()
-		{
-			System.out.println(list);
-	       list.remove(0);
-	       list.remove(2);
-		  System.out.println(list);
-			
-		}
-		public static void ListClone()
-		{
-			System.out.println(list);
-			ArrayList<Integer> clonedList = (ArrayList<Integer>) list.clone();
-			System.out.println(clonedList);
-			System.out.println(list);
+			System.out.println(enumeration.nextElement());
 		}
 	}
+
+}
